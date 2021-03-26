@@ -166,11 +166,15 @@ let avgReceipt = sum / receipts.length;
 console.log(avgReceipt);
 
 //7. Створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
-let randNums = [5, 2, 44, 4, 22, 55, 66, 56,]
+let randNums = []
 let randNumsX5 = [];
+for (let i = 0; i < 10; i++) {
+    randNums.push(Math.floor(Math.random()*(100-1)+1));
+}
 for (i = 0; i < randNums.length; i++) {
     randNumsX5[i] = randNums[i] * 5;
 }
+console.log(randNums);
 console.log(randNumsX5);
 
 
