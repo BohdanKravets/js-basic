@@ -15,16 +15,19 @@ for (let i = 0; i < digits.length; i++) {
 console.log(backDigits);
 
 //- Дан масив [1, 2, 3]. Додайте йому в кінець елементи 4, 5, 6.
-digits.push(4);
-digits.push(5);
-digits.push(6);
+
+for (let i = 4; i <= 6; i++) {
+    digits.push(i);
+}
+
 console.log(digits);
 
 //- Дан масив [1, 2, 3]. Додайте йому в початок елементи 4, 5, 6.
 digits = [1, 2, 3];
-digits.unshift(6);
-digits.unshift(5);
-digits.unshift(4);
+for (let i = 6; i >= 4; i--) {
+    digits.unshift(i);
+}
+
 console.log(digits);
 
 //- Дан масив ['js', 'css', 'jq']. Виведіть на екран перший елемент за допомогою shift()
