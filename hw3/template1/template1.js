@@ -3,13 +3,16 @@
 //1) Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
 //a) отримує текст з параграфа з id "content"
 let idContent = document.getElementById('content');
+
 //b) отримує текст з блоку з id "rules"
 let idRules = document.getElementById('rules');
+
 //c) замініть текст параграфа з id 'content' на будь-який інший
 idContent.innerText = 'Feb';
 
 //d) замініть текст параграфа з id 'rules' на будь-який інший
 idRules.innerText = 'Rules';
+
 //e) змініть кожному елементу колір фону на червоний
 idContent.style.backgroundColor = 'red';
 idRules.style.backgroundColor = 'red';
@@ -21,6 +24,7 @@ idRules.style.color = 'blue';
 //g) отримати весь список класів елемента з id=rules і вивести їх в console.log
 idRulesClasses = idRules.classList
 console.log(idRulesClasses)
+
 //h) отримати всі елементи з класом fc_rules
 let fcRules = document.getElementsByClassName('fc_rules');
 
@@ -29,6 +33,8 @@ for (const fcRule of fcRules) {
     fcRule.style.color = 'red';
 }
 
+//2) За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement.
+//  Вставити цей блок на сторінку
 
 let users = [{
     name: 'vasya',
@@ -86,45 +92,40 @@ let users = [{
     status: true,
     address: {city: 'Cairo', country: 'Egypt', street: 'Seashore', houseNumber: 45}
 }];
-//2) За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement.
-//  Вставити цей блок на сторінку
 
-/*for (const user of users) {
+for (const user of users) {
     let userDiv = document.createElement('div');
-    let jsonUser =JSON.stringify(user);
-    userDiv.innerText = `${user}`;
+    let jsonUser = JSON.stringify(user);
+    userDiv.innerText = `${jsonUser}`;
+    document.body.appendChild(userDiv);
+}
 
-    document.body.appendChild(userDiv);*/
 //3) За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement.
 //  Блок з адресою зробити окремим блоком, з блоками для кожної властивості
 
 for (const user of users) {
     let userDiv = document.createElement('div');
-
     userDiv.style.width ='300px';
     userDiv.style.backgroundColor = 'silver';
     userDiv.style.marginBottom = '10px';
-    for (const field in user) {
+    let userNameDiv = document.createElement('div');
+    userNameDiv.innerText = `${user.name}`;
+    let userAgeDiv = document.createElement('div');
+    userAgeDiv.innerText = `${user.age}`;
+    let userStatusDiv = document.createElement('div');
+    userStatusDiv.innerText = `${user.status}`;
+    let userAddressDiv = document.createElement('div');
+
+    for (const field in user.address) {
         let fieldDiv = document.createElement('div');
-
-
-
-        if(typeof user[field] === 'object') {
-            for (const key in user[field]) {
-                let keyDiv = document.createElement('div');
-                keyDiv.innerText = `${user[field][key]}`
-                fieldDiv.appendChild(keyDiv)
-            }
-        }
-        else {
-            fieldDiv.innerText = `${user[field]}`
-        }
-        userDiv.appendChild(fieldDiv);
-
+        fieldDiv.innerText = `${user.address[field]}`;
+        userAddressDiv.appendChild(fieldDiv);
     }
 
-
-
+    userDiv.appendChild(userNameDiv);
+    userDiv.appendChild(userAgeDiv);
+    userDiv.appendChild(userStatusDiv);
+    userDiv.appendChild(userAddressDiv);
     document.body.appendChild(userDiv);
 
 }
