@@ -22,8 +22,8 @@ idContent.style.color = 'blue';
 idRules.style.color = 'blue';
 
 //g) отримати весь список класів елемента з id=rules і вивести їх в console.log
-idRulesClasses = idRules.classList
-console.log(idRulesClasses)
+idRulesClasses = idRules.classList;
+console.log(idRulesClasses);
 
 //h) отримати всі елементи з класом fc_rules
 let fcRules = document.getElementsByClassName('fc_rules');

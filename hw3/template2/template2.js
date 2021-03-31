@@ -67,7 +67,7 @@ for (const subHeader of subHeaders) {
 //k) отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
 let content1Classes = document.getElementsByClassName('content_1');
 for (const content1Class of content1Classes) {
-    content1Class.innerText = 'February2021'
+    content1Class.innerText = 'February2021';
 }
 
 //l) отримати елементи p та змінити їм padding на 20px
