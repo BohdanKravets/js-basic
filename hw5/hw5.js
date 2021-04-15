@@ -172,32 +172,27 @@
 //
 // }
 
-// class Tag {
-//     constructor(titleOfTag, action, attrs) {
-//         this.titleOfTag = titleOfTag;
-//         this.action = action;
-//         this.attrs = attrs;
-//     }
-// }
-//
-// let aTag = new Tag('a',
-//     'Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок',
-//     [
-//         {
-//             titleOfAttr: 'accesskey',
-//             actionOfAttr: 'Активация ссылки с помощью комбинации клавиш'
-//         },
-//         {
-//             titleOfAttr: 'coords',
-//             actionOfAttr: 'Устанавливает координаты активной области'
-//         },
-//         {
-//             titleOfAttr: 'href',
-//             actionOfAttr: 'Задает адрес документа, на который следует перейти'
-//         }
-//     ]);
-// console.log(aTag);
-//
+class Tag {
+    constructor(titleOfTag, action, titleOfAttr, actionOfAttr) {
+        this.titleOfTag = titleOfTag;
+        this.action = action;
+        this.attr = {
+            titleOfAttr: titleOfAttr,
+            actionOfAttr: actionOfAttr
+
+        };
+        this.attrs.push(this.attr);
+    }
+}
+
+let aTag = new Tag('a',
+    'Тег <a> является одним из важных элементов HTML и предназначен для создания ссылок',
+        'accesskey',
+    'Активация ссылки с помощью комбинации клавиш');
+
+
+console.log(aTag);
+
 // let divTag = new Tag('div',
 //     'Элемент <div>  предназначен для выделения фрагмента документа с целью изменения вида содержимого. ',
 //     [
