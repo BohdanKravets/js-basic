@@ -43,46 +43,46 @@
 // -Дан текстареа. В него можно ввести данные, нажать кнопку "сохранить" и они "фикисруются" (в хранилище), затем поредактировать их, затем еще поредактировать и возможно еще.....
 // Требование : хранить историю своих изменений (даже после перезагрузки страницы).
 // Сверху над текстареа должны появится стрелочки, с помощью которых можно перемещаться по истории (не забудьте!чекпоинт истории - нажатеи кнопки сохранить).
-// let textarea = document.getElementById('text5');
-// const save = document.getElementById('save');
-// const left = document.getElementById('left');
-// const right = document.getElementById('right');
-// let currentIndex = 0;
-//
-// let arr = JSON.parse(localStorage.getItem('textarea'));
-// if (!arr || !Array.isArray(arr)) {
-//     localStorage.setItem('textarea', JSON.stringify([]));
-// } else {
-//     currentIndex = arr.length - 1
-//     textarea.value = arr[currentIndex];
-//
-// }
-//
-// save.onclick = () => {
-//     let arr = JSON.parse(localStorage.getItem('textarea'));
-//     arr.push(textarea.value);
-//     localStorage.setItem('textarea', JSON.stringify(arr));
-//     currentIndex = arr.length - 1;
-// }
-//
-// left.onclick = () => {
-//     let arr = JSON.parse(localStorage.getItem('textarea'));
-//
-//     if (currentIndex - 1 >= 0) {
-//         currentIndex--;
-//         textarea.value = arr[currentIndex];
-//     }
-// }
-//
-// right.onclick = () => {
-//     let arr = JSON.parse(localStorage.getItem('textarea'));
-//
-//     if (currentIndex + 1 < arr.length) {
-//         currentIndex++;
-//         textarea.value = arr[currentIndex];
-//
-//     }
-// }
+let textarea = document.getElementById('text5');
+const save = document.getElementById('save');
+const left = document.getElementById('left');
+const right = document.getElementById('right');
+let currentIndex = 0;
+
+let arr = JSON.parse(localStorage.getItem('textarea'));
+if (!arr || !Array.isArray(arr)) {
+    localStorage.setItem('textarea', JSON.stringify([]));
+} else {
+    currentIndex = arr.length - 1
+    textarea.value = arr[currentIndex];
+
+}
+
+save.onclick = () => {
+    let arr = JSON.parse(localStorage.getItem('textarea'));
+    arr.push(textarea.value);
+    localStorage.setItem('textarea', JSON.stringify(arr));
+    currentIndex = arr.length - 1;
+}
+
+left.onclick = () => {
+    let arr = JSON.parse(localStorage.getItem('textarea'));
+
+    if (currentIndex - 1 >= 0) {
+        currentIndex--;
+        textarea.value = arr[currentIndex];
+    }
+}
+
+right.onclick = () => {
+    let arr = JSON.parse(localStorage.getItem('textarea'));
+
+    if (currentIndex + 1 < arr.length) {
+        currentIndex++;
+        textarea.value = arr[currentIndex];
+
+    }
+}
 
 
 // - Реализуйте записную книгу, хранящую данные в локальном хранилище.
